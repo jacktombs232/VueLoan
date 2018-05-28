@@ -55,10 +55,15 @@ export default {
   },
   // 创建完毕状态(里面是操作)
   created() {
+    this.$message({
+      message: '账号密码及验证码不为空即可',
+      type: 'success'
+    })
     // 获取图形验证码
     this.getcode()
     // 获取存在本地的用户名密码
     this.getuserpwd()
+    
   },
   // 里面的函数只有调用才会执行
   methods: {

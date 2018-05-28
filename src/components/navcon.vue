@@ -39,30 +39,38 @@ export default {
         type: 'warning'
       })
         .then(() => {
-          loginout()
-            .then(res => {
-              if (res.success) {
-                //如果请求成功就让他2秒跳转路由
-                setTimeout(() => {
-                  this.$store.commit('logout', 'false')
-                  this.$router.push({ path: '/login' })
-                  this.$message({
-                    type: 'success',
-                    message: '已退出登录!'
-                  })
-                }, 1000)
-              } else {
-                this.$message.error(res.msg)
-                this.logining = false
-                return false
-              }
+          setTimeout(() => {
+            this.$store.commit('logout', 'false')
+            this.$router.push({ path: '/login' })
+            this.$message({
+              type: 'success',
+              message: '已退出登录!'
             })
-            .catch(err => {
-              // 获取图形验证码
-              this.getcode()
-              this.logining = false
-              this.$message.error('退出失败，请稍后再试！')
-            })
+          }, 1000)
+          // loginout()
+          //   .then(res => {
+          //     if (res.success) {
+          //       //如果请求成功就让他2秒跳转路由
+          //       setTimeout(() => {
+          //         this.$store.commit('logout', 'false')
+          //         this.$router.push({ path: '/login' })
+          //         this.$message({
+          //           type: 'success',
+          //           message: '已退出登录!'
+          //         })
+          //       }, 1000)
+          //     } else {
+          //       this.$message.error(res.msg)
+          //       this.logining = false
+          //       return false
+          //     }
+          //   })
+          //   .catch(err => {
+          //     // 获取图形验证码
+          //     this.getcode()
+          //     this.logining = false
+          //     this.$message.error('退出失败，请稍后再试！')
+          //   })
         })
         .catch(() => {
           this.$message({
@@ -86,10 +94,10 @@ export default {
 .submenu {
   float: right;
 }
-.buttonimg{
-  height:60px;
+.buttonimg {
+  height: 60px;
   background-color: transparent;
-  border:none;
+  border: none;
 }
 .showimg {
   width: 26px;
