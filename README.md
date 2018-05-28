@@ -1,10 +1,7 @@
 # vue搭建后台管理界面模版（PC端）
 ------------------------
 
-
-
-gif
-<img src="https://gitee.com/ldhblog/vueproject/blob/master/static/gif.gif" width="900px" height="519px"/>  
+<img src="./static/gif.gif" width="900px" height="519px"/>  
 
 
 #### 技术栈
