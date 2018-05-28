@@ -7,7 +7,7 @@
 
 
 #### 技术栈
-vue2 + vuex + vue-router + webpack + ES6/7 + axios + elementUI
+vue2 + vuex + vue-router + webpack + ES6/7 + axios + elementUI + 阿里图标iconfont
 
 
 #### 目录结构
