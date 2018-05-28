@@ -132,26 +132,95 @@ export default {
     // 获取公司列表
     getdata(parameter) {
       this.loading = true
-      deptList(parameter)
-        .then(res => {
-          this.loading = false
-          if (res.success == false) {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          } else {
-            this.listData = res.data
-            // 分页赋值
-            this.pageparm.currentPage = this.formInline.page
-            this.pageparm.pageSize = this.formInline.limit
-            this.pageparm.total = res.count
+      // 模拟数据
+      let res = {
+        code: 0,
+        msg: null,
+        count: 5,
+        data: [
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1521062371000,
+            editTime: 1526700200000,
+            deptId: 2,
+            deptName: '上海分公司',
+            deptNo: '1',
+            parentId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1521063247000,
+            editTime: 1526652291000,
+            deptId: 3,
+            deptName: '上海测试',
+            deptNo: '02',
+            parentId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526349555000,
+            editTime: 1526349565000,
+            deptId: 12,
+            deptName: '1',
+            deptNo: '11',
+            parentId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526373178000,
+            editTime: 1526373178000,
+            deptId: 13,
+            deptName: '5',
+            deptNo: '5',
+            parentId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526453107000,
+            editTime: 1526453107000,
+            deptId: 17,
+            deptName: 'v',
+            deptNo: 'v',
+            parentId: 1
           }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('菜单加载失败，请稍后再试！')
-        })
+        ]
+      }
+      this.loading = false
+      this.listData = res.data
+      // 分页赋值
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
+      // deptList(parameter)
+      //   .then(res => {
+      //     this.loading = false
+      //     if (res.success == false) {
+      //       this.$message({
+      //         type: 'info',
+      //         message: res.msg
+      //       })
+      //     } else {
+      //       this.listData = res.data
+      //       // 分页赋值
+      //       this.pageparm.currentPage = this.formInline.page
+      //       this.pageparm.pageSize = this.formInline.limit
+      //       this.pageparm.total = res.count
+      //     }
+      //   })
+      //   .catch(err => {
+      //     this.loading = false
+      //     this.$message.error('菜单加载失败，请稍后再试！')
+      //   })
     },
     // 分页插件事件
     callFather(parm) {

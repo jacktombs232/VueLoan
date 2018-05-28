@@ -237,26 +237,295 @@ export default {
     // 获取公司列表
     getdata(parameter) {
       this.loading = true
-      OrderList(parameter)
-        .then(res => {
-          this.loading = false
-          if (res.success == false) {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          } else {
-            this.listData = res.data
-            // 分页赋值
-            this.pageparm.currentPage = this.formInline.page
-            this.pageparm.pageSize = this.formInline.limit
-            this.pageparm.total = res.count
+      // 模拟数据开始
+      let res = {
+        code: 0,
+        msg: null,
+        count: 23,
+        data: [
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526380193000,
+            editTime: 1526380193000,
+            orderId: 109,
+            deptId: 1,
+            deptName: 'xxxx',
+            orderNo: 'xxxx',
+            transId: 'xxxx',
+            payType: 6,
+            subPayType: 'WXPay',
+            transType: '退款',
+            machineNo: '111111',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: -0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 14,
+            openId: null,
+            mchId: '111111111111111',
+            subMchId: null,
+            remark: '不允许从此IP发起交易: 101.81.251.226'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526380176000,
+            editTime: 1526380176000,
+            orderId: 108,
+            deptId: 1,
+            deptName: 'xxxxxx',
+            orderNo: 'xxxx',
+            transId: 'xxxxx',
+            payType: 6,
+            subPayType: 'WXPay',
+            transType: '退款',
+            machineNo: 'J1AX904002',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: -0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 14,
+            openId: null,
+            mchId: '898310154990338',
+            subMchId: null,
+            remark: '不允许从此IP发起交易: 101.81.251.226'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1524921444000,
+            editTime: 1524894094000,
+            orderId: 107,
+            deptId: 1,
+            deptName: 'xxxxxx',
+            orderNo: 'J1AX90400220180428101723945',
+            transId: '4200000137201804287543647891',
+            payType: 6,
+            subPayType: 'WXPay',
+            transType: '消费',
+            machineNo: 'J1AX904002',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 7,
+            openId: null,
+            mchId: '898310154990338',
+            subMchId: null,
+            remark: '无法找到指定的账单'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1521307596000,
+            editTime: 1524641207000,
+            orderId: 20,
+            deptId: 1,
+            deptName: 'xxxx',
+            orderNo: '9300079120180318142634440',
+            transId: null,
+            payType: 0,
+            subPayType: '0',
+            transType: '消费',
+            machineNo: '111111111111111',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 7,
+            openId: null,
+            mchId: null,
+            subMchId: null,
+            remark: '1111111111111111111111'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1520195909000,
+            editTime: 1520195909000,
+            orderId: 19,
+            deptId: 1,
+            deptName: 'xxxx',
+            orderNo: '9300079120180305183828606',
+            transId: null,
+            payType: 0,
+            subPayType: '0',
+            transType: '消费',
+            machineNo: '93000791',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 1,
+            openId: null,
+            mchId: null,
+            subMchId: null,
+            remark: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1520035180000,
+            editTime: 1520035180000,
+            orderId: 18,
+            deptId: 1,
+            deptName: 'xxxx',
+            orderNo: '4200000056201803031934477774',
+            transId: '9300079120180303170851281',
+            payType: 6,
+            subPayType: 'WXPay',
+            transType: '退款',
+            machineNo: '222222222222222222',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 8,
+            openId: null,
+            mchId: '898310154990338',
+            subMchId: null,
+            remark: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1520020261000,
+            editTime: 1520185478000,
+            orderId: 17,
+            deptId: 1,
+            deptName: 'xxxx',
+            orderNo: '9300079120180303175059985',
+            transId: '4200000072201803031887274444',
+            payType: 6,
+            subPayType: 'WXPay',
+            transType: '消费',
+            machineNo: '93000791',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 7,
+            openId: null,
+            mchId: '898310154990338',
+            subMchId: null,
+            remark: '不允许从此IP发起交易: 116.247.119.165'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1520019911000,
+            editTime: 1520020075000,
+            orderId: 16,
+            deptId: 1,
+            deptName: 'xxxx',
+            orderNo: '9300079120180303174511778',
+            transId: '4200000055201803031949877221',
+            payType: 6,
+            subPayType: 'WXPay',
+            transType: '消费',
+            machineNo: '93000791',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 1,
+            openId: null,
+            mchId: '898310154990338',
+            subMchId: null,
+            remark: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1520019776000,
+            editTime: 1520019776000,
+            orderId: 15,
+            deptId: 1,
+            deptName: 'xxxx',
+            orderNo: '9300079120180303174256156',
+            transId: null,
+            payType: 0,
+            subPayType: '0',
+            transType: '消费',
+            machineNo: '93000791',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 1,
+            openId: null,
+            mchId: null,
+            subMchId: null,
+            remark: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1520019729000,
+            editTime: 1520019729000,
+            orderId: 14,
+            deptId: 1,
+            deptName: '上海XX',
+            orderNo: '9300079120180303174208429',
+            transId: null,
+            payType: 0,
+            subPayType: '0',
+            transType: '消费',
+            machineNo: '93000791',
+            goodsNo: '123456',
+            goodsPrice: 0.01,
+            payAmount: 0.01,
+            goodsName: '可乐',
+            aisleNo: null,
+            orderStatus: 1,
+            openId: null,
+            mchId: null,
+            subMchId: null,
+            remark: null
           }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('菜单加载失败，请稍后再试！')
-        })
+        ]
+      }
+      this.loading = false
+      this.listData = res.data
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
+
+      // OrderList(parameter)
+      //   .then(res => {
+      //     this.loading = false
+      //     if (res.success == false) {
+      //       this.$message({
+      //         type: 'info',
+      //         message: res.msg
+      //       })
+      //     } else {
+      //       this.listData = res.data
+      //       // 分页赋值
+      //       this.pageparm.currentPage = this.formInline.page
+      //       this.pageparm.pageSize = this.formInline.limit
+      //       this.pageparm.total = res.count
+      //     }
+      //   })
+      //   .catch(err => {
+      //     this.loading = false
+      //     this.$message.error('菜单加载失败，请稍后再试！')
+      //   })
     },
     // 分页插件事件
     callFather(parm) {

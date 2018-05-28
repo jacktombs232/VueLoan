@@ -223,27 +223,259 @@ export default {
     // 获取公司列表
     getdata(parameter) {
       this.loading = true
-      ConfigList(parameter)
-        .then(res => {
-          console.log(JSON.stringify(res))
-          this.loading = false
-          if (res.success == false) {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          } else {
-            this.listData = res.data
-            // 分页赋值
-            this.pageparm.currentPage = this.formInline.page
-            this.pageparm.pageSize = this.formInline.limit
-            this.pageparm.total = res.count
+      // 模拟数据
+      let res = {
+        code: 0,
+        msg: null,
+        count: 207,
+        data: [
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 1,
+            name: '支付宝2.0',
+            payType: 1,
+            partner: '2015122801047567',
+            subMchId: '',
+            appid: '2015122801047567',
+            notifyUrl: 'r/pay/alipay/notify',
+            signType: 'RSA',
+            partnerKey: '==',
+            sellerUserId: '2088121360144859',
+            certPath: '',
+            certPassword: '',
+            rsaKey: '',
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 2,
+            name: 'zzzzzz',
+            payType: 2,
+            partner: '1250856201',
+            subMchId: null,
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl: null,
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/machine-service-provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1250856201.p12',
+            certPassword: '1250856201',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 3,
+            name: ' 待删除',
+            payType: 2,
+            partner: '1271942301',
+            subMchId: '1273729701',
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl: '/pay/wx/notify',
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: '',
+            certPath:
+              '/usr/local/tomcat_provider/webapps/machine-service-provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1271942301.p12',
+            certPassword: '1271942301',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 5,
+            name: '微信301',
+            payType: 2,
+            partner: '1271942301',
+            subMchId: '1341564201',
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl: 'er/pay/wx/notify',
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/---0.0.1-SNAPSHOT/conf/apiclient_cert_1271942301.p12',
+            certPassword: '1271942301',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 6,
+            name: '微信301',
+            payType: 2,
+            partner: '1271942301',
+            subMchId: '1284797101',
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl:
+              'http://180.166.211.210:8114/machine-pay-consumer/pay/wx/notify',
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/--provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1271942301.p12',
+            certPassword: '1271942301',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 7,
+            name: '微信301',
+            payType: 2,
+            partner: '1271942301',
+            subMchId: '1277531101',
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl:
+              'http://180.166.211.210:8114/machine-pay-consumer/pay/wx/notify',
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/machine-service-provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1271942301.p12',
+            certPassword: '1271942301',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 8,
+            name: '微信301',
+            payType: 2,
+            partner: '1271942301',
+            subMchId: '1276485301',
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl:
+              'http://180.166.211.210:8114/machine-pay-consumer/pay/wx/notify',
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/machine-service-provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1271942301.p12',
+            certPassword: '1271942301',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 9,
+            name: '微信',
+            payType: 2,
+            partner: '1347158201',
+            subMchId: '1351034701',
+            appid: 'wx83a7489c10c9c952',
+            notifyUrl: '',
+            signType: 'NATIVE',
+            partnerKey: 'f174607ba704632b6cad2df8b04650d6',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/machine-service-provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1347158201.p12',
+            certPassword: '1347158201',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 10,
+            name: '-微信301',
+            payType: 2,
+            partner: '1271942301',
+            subMchId: '1357984702',
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl:
+              'http://180.166.211.210:8114/machine-pay-consumer/pay/wx/notify',
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/machine-service-provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1271942301.p12',
+            certPassword: '1271942301',
+            rsaKey: null,
+            deptId: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            id: 11,
+            name: '-微信301',
+            payType: 2,
+            partner: '1271942301',
+            subMchId: '1357972202',
+            appid: 'wx3ef7713adf0a97b8',
+            notifyUrl:
+              'http://180.166.211.210:8114/machine-pay-consumer/pay/wx/notify',
+            signType: 'NATIVE',
+            partnerKey: '2e3cdaf5aa051c16563c0b8916184d5d',
+            sellerUserId: null,
+            certPath:
+              '/usr/local/tomcat_provider/webapps/machine-service-provider-0.0.1-SNAPSHOT/conf/apiclient_cert_1271942301.p12',
+            certPassword: '1271942301',
+            rsaKey: null,
+            deptId: null
           }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('菜单加载失败，请稍后再试！')
-        })
+        ]
+      }
+      this.loading = false
+      this.listData = res.data
+      // 分页赋值
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
+      // ConfigList(parameter)
+      //   .then(res => {
+      //     this.loading = false
+      //     if (res.success == false) {
+      //       this.$message({
+      //         type: 'info',
+      //         message: res.msg
+      //       })
+      //     } else {
+      //       this.listData = res.data
+      //       // 分页赋值
+      //       this.pageparm.currentPage = this.formInline.page
+      //       this.pageparm.pageSize = this.formInline.limit
+      //       this.pageparm.total = res.count
+      //     }
+      //   })
+      //   .catch(err => {
+      //     this.loading = false
+      //     this.$message.error('菜单加载失败，请稍后再试！')
+      //   })
     },
     // 分页插件事件
     callFather(parm) {
@@ -359,7 +591,7 @@ export default {
     // 关闭编辑、增加弹出框
     closeDialog(formName) {
       this.editFormVisible = false
-      this.$refs[formName].resetFields();
+      this.$refs[formName].resetFields()
     }
   }
 }

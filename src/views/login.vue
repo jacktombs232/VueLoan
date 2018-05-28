@@ -75,33 +75,40 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           this.logining = true
-          login(this.ruleForm).then(res => {
-            if (res.success) {
-              if (this.rememberpwd) {
-                //保存帐号到cookie，有效期7天
-                setCookie('user', this.ruleForm.username, 7)
-                //保存密码到cookie，有效期7天
-                setCookie('pwd', this.ruleForm.password, 7)
-              } else {
-                delCookie('user')
-                delCookie('pwd')
-              }
-              //如果请求成功就让他2秒跳转路由
-              setTimeout(() => {
-                this.logining = false
-                // 缓存token
-                localStorage.setItem('logintoken', res.data.token)
-                // 缓存用户个人信息
-                localStorage.setItem('userdata', JSON.stringify(res.data))
-                this.$store.commit('login', 'true')
-                this.$router.push({ path: '/goods/Goods' })
-              }, 1000)
-            } else {
-              this.$message.error(res.msg)
-              this.logining = false
-              return false
-            }
-          })
+          // 测试通道，不为空直接登录
+          setTimeout(() => {
+            this.logining = false
+            this.$store.commit('login', 'true')
+            this.$router.push({ path: '/goods/Goods' })
+          }, 1000)
+          // 注释
+          // login(this.ruleForm).then(res => {
+          //   if (res.success) {
+          //     if (this.rememberpwd) {
+          //       //保存帐号到cookie，有效期7天
+          //       setCookie('user', this.ruleForm.username, 7)
+          //       //保存密码到cookie，有效期7天
+          //       setCookie('pwd', this.ruleForm.password, 7)
+          //     } else {
+          //       delCookie('user')
+          //       delCookie('pwd')
+          //     }
+          //     //如果请求成功就让他2秒跳转路由
+          //     setTimeout(() => {
+          //       this.logining = false
+          //       // 缓存token
+          //       localStorage.setItem('logintoken', res.data.token)
+          //       // 缓存用户个人信息
+          //       localStorage.setItem('userdata', JSON.stringify(res.data))
+          //       this.$store.commit('login', 'true')
+          //       this.$router.push({ path: '/goods/Goods' })
+          //     }, 1000)
+          //   } else {
+          //     this.$message.error(res.msg)
+          //     this.logining = false
+          //     return false
+          //   }
+          // })
         } else {
           // 获取图形验证码
           this.getcode()
@@ -111,13 +118,6 @@ export default {
         }
       })
     },
-    // 获取验证码
-    getcode() {
-      let myDate = new Date()
-      let randomstr = myDate.getTime()
-      this.ruleForm.randomStr = randomstr
-      this.ruleForm.codeimg = 'http://180.166.211.217:8099/code/' + randomstr
-    }
   }
 }
 </script>
@@ -142,7 +142,7 @@ export default {
   background: #fff;
   border: 1px solid #eaeaea;
   text-align: left;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.1);
 }
 .title {
   margin: 0px auto 40px auto;

@@ -148,26 +148,112 @@ export default {
     // 获取数据方法
     getdata(parameter) {
       this.loading = true
-      variableList(parameter)
-        .then(res => {
-          this.loading = false
-          if (res.success == false) {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          } else {
-            this.listData = res.data
-            // 分页赋值
-            this.pageparm.currentPage = this.formInline.page
-            this.pageparm.pageSize = this.formInline.limit
-            this.pageparm.total = res.count
+      // 模拟数据
+      let res = {
+        code: 0,
+        msg: null,
+        count: 6,
+        data: [
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1519385529000,
+            editTime: 1520619747000,
+            varId: 190,
+            deptId: 1,
+            varLable: '支付访问域名',
+            varName: 'domainName',
+            varValue: 'http://127.0.0.1:8080/iot-service-pay'
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1519451541000,
+            editTime: 1519451547000,
+            varId: 191,
+            deptId: 1,
+            varLable: '商品图片地址',
+            varName: 'productImgURL',
+            varValue: 'http://ymwlw.com/pic'
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1519452658000,
+            editTime: 1519452661000,
+            varId: 192,
+            deptId: 1,
+            varLable: '手机支付广告地址',
+            varName: 'groupDomain',
+            varValue: 'http://ymwlwl.com'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1519879624000,
+            editTime: 1519879628000,
+            varId: 193,
+            deptId: 1,
+            varLable: '下单接口测试模式',
+            varName: 'envType',
+            varValue: 'false'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526374014000,
+            editTime: 1526374031000,
+            varId: 198,
+            deptId: null,
+            varLable: 'sgh',
+            varName: 'jhjj',
+            varValue: 'jhjhgs'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526453243000,
+            editTime: 1526453243000,
+            varId: 199,
+            deptId: null,
+            varLable: 'v',
+            varName: 'v',
+            varValue: 'v'
           }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('菜单加载失败，请稍后再试！')
-        })
+        ]
+      }
+      this.loading = false
+      this.listData = res.data
+      // 分页赋值
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
+      // variableList(parameter)
+      //   .then(res => {
+      //     console.log(JSON.stringify(res))
+      //     this.loading = false
+      //     if (res.success == false) {
+      //       this.$message({
+      //         type: 'info',
+      //         message: res.msg
+      //       })
+      //     } else {
+      //       this.listData = res.data
+      //       // 分页赋值
+      //       this.pageparm.currentPage = this.formInline.page
+      //       this.pageparm.pageSize = this.formInline.limit
+      //       this.pageparm.total = res.count
+      //     }
+      //   })
+      //   .catch(err => {
+      //     this.loading = false
+      //     this.$message.error('菜单加载失败，请稍后再试！')
+      //   })
     },
     // 分页插件事件
     callFather(parm) {

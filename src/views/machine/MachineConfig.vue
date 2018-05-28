@@ -173,26 +173,115 @@ export default {
     // 获取公司列表
     getdata(parameter) {
       this.loading = true
-      MachineConfigList(parameter)
-        .then(res => {
-          this.loading = false
-          if (res.success == false) {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          } else {
-            this.listData = res.data
-            // 分页赋值
-            this.pageparm.currentPage = this.formInline.page
-            this.pageparm.pageSize = this.formInline.limit
-            this.pageparm.total = res.count
+      // 模拟数据
+      let res = {
+        code: 0,
+        msg: null,
+        count: 5,
+        data: [
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: 1524046759000,
+            tcId: 1,
+            deptId: 1,
+            machineNo: '564565656666',
+            payType: 3,
+            payOpen: 'T',
+            configId: 63,
+            configName: '微信',
+            posNo: '098'
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            tcId: 2,
+            deptId: 1,
+            machineNo: '66666666',
+            payType: 2,
+            payOpen: 'T',
+            configId: 64,
+            configName: '支付宝',
+            posNo: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            tcId: 3,
+            deptId: 1,
+            machineNo: '93066545645546500791',
+            payType: 6,
+            payOpen: 'T',
+            configId: 67,
+            configName: '银商微信、支付宝',
+            posNo: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: null,
+            editTime: null,
+            tcId: 4,
+            deptId: 1,
+            machineNo: '65545656565',
+            payType: 6,
+            payOpen: 'T',
+            configId: 67,
+            configName: '银商微信、支付宝',
+            posNo: null
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1527409037000,
+            editTime: 1527409037000,
+            tcId: 6,
+            deptId: 1,
+            machineNo: '565654545454545',
+            payType: 6,
+            payOpen: 'T',
+            configId: 96,
+            configName: '微信',
+            posNo: null
           }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('菜单加载失败，请稍后再试！')
-        })
+        ]
+      }
+      this.loading = false
+      this.listData = res.data
+      // 分页赋值
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
+      // MachineConfigList(parameter)
+      //   .then(res => {
+      //     this.loading = false
+      //     if (res.success == false) {
+      //       this.$message({
+      //         type: 'info',
+      //         message: res.msg
+      //       })
+      //     } else {
+      //       this.listData = res.data
+      //       // 分页赋值
+      //       this.pageparm.currentPage = this.formInline.page
+      //       this.pageparm.pageSize = this.formInline.limit
+      //       this.pageparm.total = res.count
+      //     }
+      //   })
+      //   .catch(err => {
+      //     this.loading = false
+      //     this.$message.error('菜单加载失败，请稍后再试！')
+      //   })
     },
     // 分页插件事件
     callFather(parm) {

@@ -263,22 +263,221 @@ export default {
     // 获取数据方法
     getdata(parameter) {
       this.loading = true
+      // 模拟数据开始
+      let res = {
+        code: 0,
+        msg: null,
+        count: 12,
+        data: [
+          {
+            addUser: '1',
+            editUser: '1',
+            addTime: null,
+            editTime: 1527411068000,
+            userId: 1,
+            systemNo: 'pmd',
+            userName: 'root',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '超级管理员',
+            userSex: '女',
+            userMobile: '138123456789',
+            userEmail: '111@qq.com',
+            isLock: 'N',
+            deptId: 1,
+            deptName: 'xxxx',
+            roleId: 1
+          },
+          {
+            addUser: '1',
+            editUser: '1',
+            addTime: null,
+            editTime: 1527410579000,
+            userId: 3,
+            systemNo: 'mc',
+            userName: 'zengzhuo',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '系统管理员',
+            userSex: 'M',
+            userMobile: '18616988966',
+            userEmail: '222@qq.com',
+            isLock: 'N',
+            deptId: 2,
+            deptName: 'xxxx',
+            roleId: 101
+          },
+          {
+            addUser: '1',
+            editUser: '4',
+            addTime: null,
+            editTime: 1527411586000,
+            userId: 4,
+            systemNo: 'ec',
+            userName: 'admin',
+            userPassword: '59ba8b7dda9ff79186311a5a9fa155ca',
+            userRealName: '超级管理员',
+            userSex: '女',
+            userMobile: '138123456789',
+            userEmail: 'huangxuekun@founder.com',
+            isLock: 'N',
+            deptId: 2,
+            deptName: 'xxxx',
+            roleId: 3
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526275128000,
+            editTime: 1526284402000,
+            userId: 28,
+            systemNo: null,
+            userName: 'eee111',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '123111',
+            userSex: '男',
+            userMobile: '12354342345',
+            userEmail: '111232@qq.com',
+            isLock: 'N',
+            deptId: 4,
+            deptName: 'zxxxxx',
+            roleId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526284533000,
+            editTime: 1526284533000,
+            userId: 37,
+            systemNo: null,
+            userName: 'ces',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: 'sesfg',
+            userSex: '男',
+            userMobile: '12312312312',
+            userEmail: '122111111',
+            isLock: 'N',
+            deptId: 1,
+            deptName: 'xxxx',
+            roleId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526285228000,
+            editTime: 1526285228000,
+            userId: 43,
+            systemNo: null,
+            userName: '22',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '22',
+            userSex: '男',
+            userMobile: '222',
+            userEmail: '222',
+            isLock: 'N',
+            deptId: 1,
+            deptName: 'xxxx',
+            roleId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526448593000,
+            editTime: 1526448593000,
+            userId: 58,
+            systemNo: null,
+            userName: '1',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '1',
+            userSex: '女',
+            userMobile: '13607118810',
+            userEmail: '1@qq.com',
+            isLock: 'N',
+            deptId: 1,
+            deptName: 'xxxx',
+            roleId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526452698000,
+            editTime: 1526520341000,
+            userId: 60,
+            systemNo: null,
+            userName: '222222222',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '222222222222',
+            userSex: '男',
+            userMobile: '13607118810',
+            userEmail: '111@qq.com',
+            isLock: 'N',
+            deptId: 1,
+            deptName: 'xxxx',
+            roleId: 1
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526452731000,
+            editTime: 1526452731000,
+            userId: 61,
+            systemNo: null,
+            userName: '33333333333333',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '4444444444444444444',
+            userSex: '女',
+            userMobile: '13607118810',
+            userEmail: 'qqq@qq.com',
+            isLock: 'N',
+            deptId: 1,
+            deptName: 'xxxx',
+            roleId: 2
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1526452756000,
+            editTime: 1527128981000,
+            userId: 62,
+            systemNo: null,
+            userName: '211111111',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '21111111111',
+            userSex: '男',
+            userMobile: '13601478451',
+            userEmail: '222222@qq.com',
+            isLock: 'N',
+            deptId: 17,
+            deptName: 'v',
+            roleId: 2
+          }
+        ]
+      }
+      this.loading = false
+      this.userData = res.data
+      // 分页赋值
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
       // 获取用户列表
-      userList(parameter).then(res => {
-        this.loading = false
-        if (res.success == false) {
-          this.$message({
-            type: 'info',
-            message: res.msg
-          })
-        } else {
-          this.userData = res.data
-          // 分页赋值
-          this.pageparm.currentPage = this.formInline.page
-          this.pageparm.pageSize = this.formInline.limit
-          this.pageparm.total = res.count
-        }
-      })
+      // userList(parameter).then(res => {
+      //   this.loading = false
+      //   if (res.success == false) {
+      //     this.$message({
+      //       type: 'info',
+      //       message: res.msg
+      //     })
+      //   } else {
+      //     this.userData = res.data
+      //     // 分页赋值
+      //     this.pageparm.currentPage = this.formInline.page
+      //     this.pageparm.pageSize = this.formInline.limit
+      //     this.pageparm.total = res.count
+      //   }
+      // })
     },
     // 分页插件事件
     callFather(parm) {
@@ -398,15 +597,14 @@ export default {
         })
     },
     handleClick(data, checked, node) {
-        if(checked){
-            this.$refs.tree.setCheckedNodes([]);
-            this.$refs.tree.setCheckedNodes([data]);
-            this.unitparm.deptId = data.id
-            this.unitparm.deptName = data.name
-            //交叉点击节点
-        }else{
-                        
-        }
+      if (checked) {
+        this.$refs.tree.setCheckedNodes([])
+        this.$refs.tree.setCheckedNodes([data])
+        this.unitparm.deptId = data.id
+        this.unitparm.deptName = data.name
+        //交叉点击节点
+      } else {
+      }
     },
     // 保存部门
     unitPermSave() {

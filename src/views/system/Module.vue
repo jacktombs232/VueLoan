@@ -122,7 +122,77 @@ export default {
     getdata() {
       ModuleList()
         .then(res => {
-          this.treeData = res
+          this.treeData = [{
+                "id": 1,
+                "pId": 0,
+                "name": "平台顶级",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 2,
+                "pId": 1,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 3,
+                "pId": 1,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 12,
+                "pId": 1,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 13,
+                "pId": 1,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 17,
+                "pId": 1,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 4,
+                "pId": 2,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 5,
+                "pId": 2,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 6,
+                "pId": 2,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            },
+            {
+                "id": 7,
+                "pId": 2,
+                "name": "一层",
+                "open": true,
+                "checked": false
+            }
+        ]
         })
         .catch(err => {
           this.loading = false

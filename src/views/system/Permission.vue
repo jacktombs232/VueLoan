@@ -150,27 +150,145 @@ export default {
     // 获取数据方法
     getdata(parameter) {
       this.loading = true
-      // 获取权限列表
-      permissionList(parameter)
-        .then(res => {
-          this.loading = false
-          if (res.success == false) {
-            this.$message({
-              type: 'info',
-              message: res.msg
-            })
-          } else {
-            this.listData = res.data
-            // 分页赋值
-            this.pageparm.currentPage = this.formInline.page
-            this.pageparm.pageSize = this.formInline.limit
-            this.pageparm.total = res.count
+      // 模拟数据
+      let res = {
+        code: 0,
+        msg: null,
+        count: 0,
+        data: [
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1519728609000,
+            editTime: 1522585700000,
+            permissionId: 1,
+            permissionName: '用户-列表',
+            permission: 'system:User:list',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1519728667000,
+            editTime: 1522585706000,
+            permissionId: 3,
+            permissionName: '用户-修改',
+            permission: 'system:User:save',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: null,
+            editUser: null,
+            addTime: 1519728669000,
+            editTime: 1522256096000,
+            permissionId: 4,
+            permissionName: '用户-删除',
+            permission: 'system:User:delete',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1520249365000,
+            editTime: 1522256085000,
+            permissionId: 5,
+            permissionName: '系统管理:角色:列表',
+            permission: 'system:Role:list',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1520249588000,
+            editTime: 1520249588000,
+            permissionId: 7,
+            permissionName: 'system:Role:save',
+            permission: 'system:Role:save',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1520249588000,
+            editTime: 1520249588000,
+            permissionId: 8,
+            permissionName: 'system:Role:delete',
+            permission: 'system:Role:delete',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1520251014000,
+            editTime: 1520251014000,
+            permissionId: 9,
+            permissionName: 'system:Variable:列表',
+            permission: 'system:Variable:list',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1520251014000,
+            editTime: 1520251014000,
+            permissionId: 11,
+            permissionName: 'system:Variable:修改',
+            permission: 'system:Variable:save',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
+          },
+          {
+            addUser: 'root',
+            editUser: 'root',
+            addTime: 1520251014000,
+            editTime: 1520251014000,
+            permissionId: 12,
+            permissionName: 'system:Variable:删除',
+            permission: 'system:Variable:delete',
+            lay_CHECKED: false,
+            LAY_CHECKED: false
           }
-        })
-        .catch(err => {
-          this.loading = false
-          this.$message.error('权限管理列表获取失败，请稍后再试！')
-        })
+        ]
+      }
+      this.loading = false
+      this.listData = res.data
+      // 分页赋值
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
+      // 获取权限列表
+      // permissionList(parameter)
+      //   .then(res => {
+      //     this.loading = false
+      //     if (res.success == false) {
+      //       this.$message({
+      //         type: 'info',
+      //         message: res.msg
+      //       })
+      //     } else {
+      //       this.listData = res.data
+      //       // 分页赋值
+      //       this.pageparm.currentPage = this.formInline.page
+      //       this.pageparm.pageSize = this.formInline.limit
+      //       this.pageparm.total = res.count
+      //     }
+      //   })
+      //   .catch(err => {
+      //     this.loading = false
+      //     this.$message.error('权限管理列表获取失败，请稍后再试！')
+      //   })
     },
     // 获取权限
     getAccsee() {
