@@ -4,7 +4,7 @@
 
 
 gif
-<img src="https://gitee.com/ldhblog/vueproject/blob/master/static/gif.gif" width="100%" />  
+<img src="https://gitee.com/ldhblog/vueproject/blob/master/static/gif.gif" width="900px" height="519px"/>  
 
 
 #### 技术栈
