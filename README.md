@@ -38,7 +38,92 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + elementUI
 └── README.md        # 项目文档
 ```
 
-部分页面组件演示
+# 说明
+
+>  本项目主要用于熟悉如何用 vue2 架构一个后端管理平台项目
+
+>  如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
+
+>  或者您可以 "follow" 一下，我会不断开源更多的有趣的项目
+
+>  开发环境 w7  Chrome 61
+
+>  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
+
+# 强调
+
+项目请求已经改为假数据，例如：
+``` bash
+// 模拟数据开始
+      let res = {
+        code: 0,
+        msg: null,
+        count: 12,
+        data: [
+          {
+            addUser: '1',
+            editUser: '1',
+            addTime: null,
+            editTime: 1527411068000,
+            userId: 1,
+            systemNo: 'pmd',
+            userName: 'root',
+            userPassword: 'e10adc3949ba59abbe56e057f20f883e',
+            userRealName: '超级管理员',
+            userSex: '女',
+            userMobile: '138123456789',
+            userEmail: '111@qq.com',
+            isLock: 'N',
+            deptId: 1,
+            deptName: 'xxxx',
+            roleId: 1
+          }
+        ]
+      }
+      this.loading = false
+      this.userData = res.data
+      // 分页赋值
+      this.pageparm.currentPage = this.formInline.page
+      this.pageparm.pageSize = this.formInline.limit
+      this.pageparm.total = res.count
+      // 模拟数据结束
+
+      /***
+       * 调用接口，注释上面模拟数据 取消下面注释
+       */
+      // 获取用户列表
+      // userList(parameter).then(res => {
+      //   this.loading = false
+      //   if (res.success == false) {
+      //     this.$message({
+      //       type: 'info',
+      //       message: res.msg
+      //     })
+      //   } else {
+      //     this.userData = res.data
+      //     // 分页赋值
+      //     this.pageparm.currentPage = this.formInline.page
+      //     this.pageparm.pageSize = this.formInline.limit
+      //     this.pageparm.total = res.count
+      //   }
+      // })
+```
+把模拟数据开始到结束注释掉，下面解除注释即可，
+接口地址需要修改config/index.js文件 dev
+``` bash
+proxyTable: {
+            '/api': {
+                target: 'http://xxx.xxx.xxx.xxx:xxx', // 你请求的第三方接口
+                changeOrigin: true, // 在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样服务端和服务端进行数据的交互就不会有跨域问题
+                pathRewrite: { // 路径重写，
+                    '^/api': '/api' // 替换target中的请求地址，也就是说以后你在请求http://api.jisuapi.com/XXXXX这个地址的时候直接写成/api即可。
+                }
+            }
+        },
+
+```
+
+部分截图
 ------------------------
 
 商品管理
