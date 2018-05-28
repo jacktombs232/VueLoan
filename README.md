@@ -3,7 +3,8 @@
 
 
 
-![登录页](./static/登录.png "登录")  
+gif
+<img src="./static/gif.png" width="365" height="619"/>  
 
 
 #### 技术栈
@@ -138,8 +139,6 @@ proxyTable: {
 
 #### 部分截图
 ------------------------
-gif
-![gif](./static/gif.png "gif")
 
 商品管理
 ![商品管理](./static/商品管理.png "商品管理")
