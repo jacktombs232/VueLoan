@@ -8,7 +8,7 @@
     </div>
     <el-submenu v-for="menu in allmenu" :key="menu.menuid" :index="menu.menuname">
       <template slot="title">
-        <i class="el-icon-setting"></i>
+        <i class="iconfont" :class="menu.icon"></i>
         <span>{{menu.menuname}}</span>
       </template>
       <el-menu-item-group>
@@ -38,7 +38,7 @@ export default {
       data: [
         {
           menuid: 1,
-          icon: '&#xe716;',
+          icon: 'li-icon-xiangmuguanli',
           menuname: '基础管理',
           hasThird: null,
           url: null,
@@ -55,7 +55,7 @@ export default {
         },
         {
           menuid: 33,
-          icon: '&#xe716;',
+          icon: 'li-icon-dingdanguanli',
           menuname: '订单管理',
           hasThird: null,
           url: null,
@@ -72,7 +72,7 @@ export default {
         },
         {
           menuid: 71,
-          icon: '&#xe716;',
+          icon: 'li-icon-xitongguanli',
           menuname: '系统管理',
           hasThird: null,
           url: null,
@@ -129,7 +129,7 @@ export default {
         },
         {
           menuid: 128,
-          icon: '&#xe716;',
+          icon: 'li-icon-shangchengxitongtubiaozitihuayuanwenjian91',
           menuname: '支付管理',
           hasThird: null,
           url: null,
