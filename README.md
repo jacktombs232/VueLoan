@@ -1,7 +1,7 @@
 # vue搭建后台管理界面模版（PC端）
 ------------------------
 
-<img src="./static/gif.gif" width="900px" height="519px"/>  
+<img src="./static/gif.gif" width="100%" height="519px"/>  
 
 
 #### 技术栈
