@@ -6,7 +6,25 @@
 
 #### 技术栈
 vue2 + vuex + vue-router + webpack + ES6/7 + axios + elementUI + 阿里图标iconfont
-> demo地址 [http://ldhblog.gitee.io/vueproject/#/login](http://ldhblog.gitee.io/vueproject/#/login)
+
+#### 项目预览
+[http://ldhblog.gitee.io/vueproject/#/login](http://ldhblog.gitee.io/vueproject/#/login)
+
+
+#### 说明
+
+>  本项目主要用于熟悉如何用 vue2 架构一个后端管理平台项目
+
+>  为了方便后期修改使用，模拟数据在页面中，具体修改看下面【强调】
+
+>  如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
+
+>  或者您可以 "follow" 一下，我会不断开源更多的有趣的项目
+
+>  开发环境 w7  Chrome 61
+
+>  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
+
 
 #### 目录结构
 ------------------------
@@ -35,18 +53,6 @@ vue2 + vuex + vue-router + webpack + ES6/7 + axios + elementUI + 阿里图标ico
 ├── package.json     # 项目依赖
 └── README.md        # 项目文档
 ```
-
-#### 说明
-
->  本项目主要用于熟悉如何用 vue2 架构一个后端管理平台项目
-
->  如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！ ^_^
-
->  或者您可以 "follow" 一下，我会不断开源更多的有趣的项目
-
->  开发环境 w7  Chrome 61
-
->  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
 
 #### 强调
 
