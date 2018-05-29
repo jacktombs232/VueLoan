@@ -6,7 +6,7 @@
 
 #### 技术栈
 vue2 + vuex + vue-router + webpack + ES6/7 + axios + elementUI + 阿里图标iconfont
-
+demo地址 [http://ldhblog.gitee.io/vueproject/#/login](http://ldhblog.gitee.io/vueproject/#/login)
 
 #### 目录结构
 ------------------------
