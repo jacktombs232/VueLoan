@@ -151,6 +151,23 @@ export default {
               menus: null
             }
           ]
+        },
+        {
+          menuid: 150,
+          icon: 'li-icon-shangchengxitongtubiaozitihuayuanwenjian91',
+          menuname: '图表',
+          hasThird: null,
+          url: null,
+          menus: [
+            {
+              menuid: 159,
+              icon: 'icon-provider-manage',
+              menuname: '数据可视化',
+              hasThird: 'N',
+              url: 'charts/statistics',
+              menus: null
+            }
+          ]
         }
       ],
       msg: 'success'

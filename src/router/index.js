@@ -47,6 +47,8 @@ import Config from '@/views/pay/Config';
 // 监控查询
 import druidLogin from '@/views/druid/login';
 
+// 图表界面
+import statistics from '@/views/charts/statistics';
 
 // 启用路由
 Vue.use(Router);
@@ -162,6 +164,13 @@ export default new Router({
             path: '/druid/login',
             name: '监控查询',
             component: druidLogin,
+            meta: {
+                requireAuth: true
+            }
+        }, {
+            path: '/charts/statistics',
+            name: '数据可视化',
+            component: statistics,
             meta: {
                 requireAuth: true
             }
